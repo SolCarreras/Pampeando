@@ -1,0 +1,35 @@
+const express = require('express');
+const path = require('path');
+const methodOverride = require('method-override');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+require('dotenv').config();
+
+
+const app = express();
+
+
+//Middlewares
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json);
+app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(session({ secret: 'secret', resave: false, saveUninitialized: true }));
+
+//Motor de plantillas
+app.set('view engine', 'ejs');
+app.set('views', [
+  path.join(__dirname, 'views'),
+  path.join(__dirname, 'views/main'),
+]);
+
+//Rutas
+const mainRoutes = require('./routes/mainRoutes');
+app.use('/', mainRoutes);
+app.use('/projects', projectRoutes);
+app.use('/user', userRoutes);
+
+//Servidor 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => consolog('Servidor Corriendo'))
