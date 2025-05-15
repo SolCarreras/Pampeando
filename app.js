@@ -26,10 +26,12 @@ app.set('views', [
 
 //Rutas
 const mainRoutes = require('./routes/mainRoutes');
+const projectRoutes = require('./routes/projectRoutes');
+const userRoutes = require('./routes/userRoutes');
 app.use('/', mainRoutes);
-app.use('/projects', projectRoutes);
-app.use('/user', userRoutes);
+app.use('/project', projectRoutes);
+app.use('/contact', userRoutes);
 
 //Servidor 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => consolog('Servidor Corriendo'))
+app.listen(PORT, () => console.log('Servidor Corriendo'))

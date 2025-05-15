@@ -3,9 +3,9 @@ const router = express.Router();
 const projectController = require('../controllers/projectController');
 
 
-router.get('/', projectController.list);
-router.get('/new', projectController.new);
-router.post('/', projectController.create);
+router.get('/list', projectController.list);
+router.get('/detail/:id', projectController.detail);
+
 
 
 module.exports = router;

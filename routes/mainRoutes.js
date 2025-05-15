@@ -10,7 +10,7 @@ const mainController = require('../controllers/mainController');
 //Ruta de inicio 
 router.get('/', mainController.home);
 router.get('/about', mainController.about);
-router.get('/contact', mainController.contact);
+
 
 
 
