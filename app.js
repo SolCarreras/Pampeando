@@ -11,7 +11,7 @@ require('dotenv').config();
 //Middlewares
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false}));
-app.use(express.json);
+app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(session({ secret: 'secret', resave: false, saveUninitialized: true }));
@@ -29,10 +29,10 @@ const projectRoutes = require('./routes/projectRoutes');
 const userRoutes = require('./routes/userRoutes');
 app.use('/', mainRoutes);
 app.use('/project', projectRoutes);
-app.use('/contact', userRoutes);
+app.use('/contact', userRoutes);   
 
 //Servidor 
-const PORT = 5000;
+const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`Servidor Corriendo en http://localhost:${PORT}`);
 });

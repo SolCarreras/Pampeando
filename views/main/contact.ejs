@@ -13,6 +13,10 @@
     <textarea id="message" name="message" placeholder="Contanos tus próximos proyectos..."></textarea>
 
     <button type="submit">Enviar</button>
+    <% if (typeof message !== 'undefined') { %>
+  <p class="success-message"><%= message %></p>
+<% } %>
+
   </form>
 </section>
 

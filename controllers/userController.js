@@ -1,12 +1,12 @@
 //controllers/usertController.js
 module.exports = {
-    loginForm: (req, res) => {
+    contactForm: (req, res) => {
         res.render('main/contact');
     },
 
-    login: (req, res) => {
+    sendContact: (req, res) => {
         const {name, phone, message} = req.body;
-        console.log(name, phone, message);
-        res.render('main/contact', { succesMessage: "¡Mensaje enviado correctamente!"});
+        console.log("Formulario recibido:", name, phone, message);
+        res.send('¡Gracias por contactarnos!');
     }
 };
