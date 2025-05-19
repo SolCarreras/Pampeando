@@ -1,12 +1,11 @@
 const express = require('express');
+const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
-
-const app = express();
 
 
 //Middlewares
@@ -33,5 +32,7 @@ app.use('/project', projectRoutes);
 app.use('/contact', userRoutes);
 
 //Servidor 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Servidor Corriendo'))
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor Corriendo en http://localhost:${PORT}`);
+});
