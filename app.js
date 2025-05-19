@@ -16,6 +16,12 @@ app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(session({ secret: 'secret', resave: false, saveUninitialized: true }));
 
+// Pasar sesión a todas las vistas
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+});
+
 //Motor de plantillas
 app.set('view engine', 'ejs');
 app.set('views', [

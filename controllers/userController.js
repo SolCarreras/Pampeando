@@ -5,8 +5,10 @@ module.exports = {
     },
 
     sendContact: (req, res) => {
-        const {name, phone, message} = req.body;
-        console.log("Formulario recibido:", name, phone, message);
-        res.send('¡Gracias por contactarnos!');
+        const {name, mail, message} = req.body;
+        console.log("Formulario recibido:", name, mail, message);
+        // Redirige a Home con un mensaje en la sesión
+        req.session.message = '¡Gracias por contactarnos!';
+        res.redirect('/');
     }
 };

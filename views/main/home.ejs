@@ -4,6 +4,12 @@
   <h1>Bienvenida a Mi Sitio de Mates</h1>
   <p>Descubrí nuestros diseños artesanales hechos con pasión.</p>
   <a href="/project">Ver todos los mates</a>
+  <% if (typeof session !== 'undefined' && session.message) { %>
+  <div class="alert">
+    <p><%= session.message %></p>
+  </div>
+<% session.message = null; } %>
+
 </section>
 
 <%- include('../partials/footer') %>
