@@ -1,0 +1,87 @@
+html, body {
+    height: 85%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(121, 131, 93);
+}
+
+/* Este contenedor usa flexbox vertical para forzar el footer al fondo */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* El contenido se expande, el footer se queda abajo */
+}
+
+/*dentro del home.ejs*/
+.home {
+    flex: 1;
+    width: 800px;
+    margin: 5px auto;
+    background: rgb(181, 180, 180);
+    padding: 55px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    
+}
+
+
+
+
+
+form {
+  background-color: #d08787;
+  padding: 10px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+  border: 1px solid #6d6363;
+}
+
+form h2 {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+nav {
+    background-color:  rgb(80, 106, 82);
+    padding: 15px;
+    text-align:right;   
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+     display: inline;
+    margin: 0 45px;
+}
+
+
+nav ul li a {
+    color: #cdc8c8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer normal, no fixed */
+footer {
+    background-color: #d6d0d028;
+    color: rgb(65, 67, 66);
+    text-align: center;
+    padding: 10px;
+}
