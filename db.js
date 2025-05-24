@@ -1,13 +1,14 @@
 /*agrego esta para la conexion de la base con mi proyecto, hago la configuracion.
 segundo voy a modificar mi user controllers.*/
+require('dotenv').config();
 
 const sql = require("mssql");
 const config = {
-  user: "mate",
-  password: "Pampeando123",
-  server: "localhost",      // Usá localhost en lugar de DESKTOP... porque estoy trabajando con node.js
-  database: "PampeandoDB",
-  port: 1433,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_SERVER,
+  database: process.env.DB_DATABASE,
+  port: parseInt(process.env.DB_PORT, 10),
   options: {
     encrypt: false,
     trustServerCertificate: true,
